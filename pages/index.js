@@ -1,3 +1,7 @@
+import {DefaultService} from './../client'
+
+//TODO: get intellisense on this
+
 export default function Home() {
   return (
     <div className="flex justify-center items-center h-screen">
