@@ -5,7 +5,7 @@ const Home: NextPage = (props) => {
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="flex">
-        <p className="text-3xl font-semibold">{props["message"]}</p>
+        <h1 className="text-3xl font-semibold">{props["message"]}</h1>
       </div>
     </div>
   )
