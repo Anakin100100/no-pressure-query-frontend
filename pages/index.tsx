@@ -1,8 +1,6 @@
-import {DefaultService} from './../client'
+import type { NextPage } from 'next'
 
-//TODO: get intellisense on this
-
-export default function Home() {
+const Home: NextPage = () => {
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="flex">
@@ -11,3 +9,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home
