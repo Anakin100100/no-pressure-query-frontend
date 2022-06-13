@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate-client": "npx @openapitools/openapi-generator-cli generate -i http://localhost:8000/openapi.json -g typescript-fetch -o ./client",
+    "generate-client": "npx @openapitools/openapi-generator-cli generate -i http://localhost:80/openapi.json -g typescript-fetch -o ./client",
     "test:unit": "jest",
     "test:e2e": "playwright test"
   },
