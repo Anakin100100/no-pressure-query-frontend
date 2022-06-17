@@ -1,13 +1,10 @@
 import type { NextPage } from 'next'
 import {  Configuration, DefaultApi } from "../client"
+import Register from "../components/register"
 
 const Home: NextPage = (props) => {
   return (
-    <div className="flex justify-center items-center h-screen bg-yellow-500">
-      <div className="flex">
-        <h1 className="text-3xl font-semibold">{props["message"]}</h1>
-      </div>
-    </div>
+    <Register />
   )
 }
 
