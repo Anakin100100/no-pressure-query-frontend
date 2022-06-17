@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../contexts/user_context";
 import ErrorMessage from "./ErrorMessage";
+import { useRouter } from "next/router";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -10,6 +11,7 @@ const Register = () => {
   const [lastName, setLastName] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [, setToken] = useContext(UserContext);
+  const router = useRouter();
 
   const submitRegistration = async () => {
     const requestOptions = {
@@ -48,6 +50,7 @@ const Register = () => {
       setToken(data.access_token);
       localStorage.setItem("noPressureQueryToken", data.access_token);
       console.log("Token stored in local storage");
+      router.push("/profile");
     }
   };
 
