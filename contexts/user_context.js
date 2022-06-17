@@ -1,10 +1,10 @@
-import Router from "next/router";
 import React, { createContext, useEffect, useState } from "react";
-import { Configuration, DefaultApi } from "../client";
-
 export const UserContext = createContext();
+import { useRouter } from "next/router";
 
 export const UserProvider = (props) => {
+  const router = useRouter();
+
   const [token, setToken] = useState(() => {
     if (typeof window != "undefined") {
       localStorage.getItem("noPressureQueryToken");
@@ -15,12 +15,26 @@ export const UserProvider = (props) => {
   useEffect(() => {
     const fetchUser = async () => {
       if (typeof window != "undefined") {
-        const token = localStorage.getItem("noPressureQueryToken");
-        console.log(token);
-        if (token == "null") {
-          console.log("No token found in localStorage");
+        if (typeof window !== "undefined") {
+          const token = localStorage.getItem("noPressureQueryToken");
+          console.log(token);
+        }
+        if (token == null) {
+          if (typeof window !== "undefined") {
+            console.log("No token found in localStorage");
+            if (
+              //These are unprotected routes
+              router.pathname !== "/login" &&
+              router.pathname !== "/register" &&
+              router.pathname !== "/"
+            ) {
+              router.push("/login");
+            }
+          }
         } else {
-          console.log("Token found in localStorage");
+          if (typeof window !== "undefined") {
+            console.log("Token found in localStorage");
+          }
         }
       }
     };

@@ -3,7 +3,7 @@ import Register from  "../components/register"
 
 const Home: NextPage = (props) => {
   return (
-    <Register />
+    <p>main page</p>
   )
 }
 
