@@ -12,16 +12,9 @@ export const Navbar = () => {
     setActive(!active);
   };
 
-  const handleLogout = () => {
-    if (typeof window !== "undefined") {
-      localStorage.setItem("noPressureQueryToken", "none");
-      setToken("none");
-    }
-  };
-
   return (
     <>
-      <nav className="flex items-center flex-wrap bg-green-400 p-3 ">
+      <nav className="flex items-center flex-wrap bg-green-400 p-3">
         <Link href="/">
           <a className="inline-flex items-center p-2 mr-4 ">
             <svg
@@ -89,12 +82,12 @@ export const Navbar = () => {
               if (token == "none" || token == undefined) {
                 return (
                   <>
-                    <Link href="/login">
+                    <Link href="/login" suppresshydrationwarning>
                       <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded-md text-white font-bold items-center justify-center hover:bg-green-600 hover:text-white transition ease-in-out duration-500">
                         Login
                       </a>
                     </Link>
-                    <Link href="/register">
+                    <Link href="/register" suppresshydrationwarning>
                       <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded-md text-white font-bold items-center justify-center hover:bg-green-600 hover:text-white transition ease-in-out duration-500">
                         Register
                       </a>
@@ -104,7 +97,7 @@ export const Navbar = () => {
               } else {
                 return (
                   <>
-                    <Link href="/profile">
+                    <Link href="/profile" suppresshydrationwarning>
                       <a
                         onClick={() => {
                           localStorage.setItem("noPressureQueryToken", "none");
@@ -125,3 +118,5 @@ export const Navbar = () => {
     </>
   );
 };
+
+export default Navbar;

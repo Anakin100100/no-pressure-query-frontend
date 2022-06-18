@@ -24,8 +24,8 @@ const Login = () => {
     const data = await response.json();
     console.log(data);
 
-    setToken(data.access_token);
     localStorage.setItem("noPressureQueryToken", data.access_token);
+    setToken(data.access_token);
     console.log("Token stored in local storage");
     router.push("/profile");
   };

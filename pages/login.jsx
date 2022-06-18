@@ -1,5 +1,6 @@
 import Login from "../components/Login";
-import { Navbar } from "../components/Navbar";
+import dynamic from "next/dynamic";
+const Navbar = dynamic(() => import("../components/Navbar"), { ssr: false });
 
 const LoginPage = (props) => {
   return (

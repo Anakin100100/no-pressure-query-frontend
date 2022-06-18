@@ -7,34 +7,35 @@ export const UserProvider = (props) => {
 
   const [token, setToken] = useState(() => {
     if (typeof window != "undefined") {
-      localStorage.getItem("noPressureQueryToken");
-      console.log("Reading token from localStorage");
+      const token = localStorage.getItem("noPressureQueryToken");
+      if (token != undefined && token != "none") {
+        console.log("Read token from localStorage");
+        return token;
+      } else {
+        console.log("No token found in localStorage");
+        return "none";
+      }
     }
   });
 
   useEffect(() => {
     const fetchUser = async () => {
       if (typeof window != "undefined") {
-        if (typeof window !== "undefined") {
-          const token = localStorage.getItem("noPressureQueryToken");
-          console.log(token);
-        }
+        const token = localStorage.getItem("noPressureQueryToken");
+        console.log(token);
+
         if (token == "none" || token == undefined) {
-          if (typeof window !== "undefined") {
-            console.log("No token found in localStorage");
-            if (
-              //These are unprotected routes
-              router.pathname !== "/login" &&
-              router.pathname !== "/register" &&
-              router.pathname !== "/"
-            ) {
-              router.push("/login");
-            }
+          console.log("No token found in localStorage");
+          if (
+            //These are unprotected routes
+            router.pathname !== "/login" &&
+            router.pathname !== "/register" &&
+            router.pathname !== "/"
+          ) {
+            router.push("/");
           }
         } else {
-          if (typeof window !== "undefined") {
-            console.log("Token found in localStorage");
-          }
+          console.log("Token found in localStorage");
         }
       }
     };
