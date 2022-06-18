@@ -19,7 +19,7 @@ export const UserProvider = (props) => {
           const token = localStorage.getItem("noPressureQueryToken");
           console.log(token);
         }
-        if (token == "none") {
+        if (token == "none" || token == undefined) {
           if (typeof window !== "undefined") {
             console.log("No token found in localStorage");
             if (

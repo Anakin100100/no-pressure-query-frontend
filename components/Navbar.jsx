@@ -14,7 +14,7 @@ export const Navbar = () => {
 
   const handleLogout = () => {
     if (typeof window !== "undefined") {
-      localStorage.setItem("noPressureQueryToken", "");
+      localStorage.setItem("noPressureQueryToken", "none");
       setToken("none");
     }
   };
@@ -86,7 +86,7 @@ export const Navbar = () => {
           <div className="lg:inline-flex lg:space-x-2 lg:flex-row lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto ml-0 mt-8 lg:mt-0 lg:ml-8">
             {((token) => {
               console.log(`token is ${token}`);
-              if (token == "none") {
+              if (token == "none" || token == undefined) {
                 return (
                   <>
                     <Link href="/login">
@@ -107,7 +107,7 @@ export const Navbar = () => {
                     <Link href="/profile">
                       <a
                         onClick={() => {
-                          localStorage.setItem("noPressureQueryToken", "");
+                          localStorage.setItem("noPressureQueryToken", "none");
                           setToken("none");
                         }}
                         className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded-md text-white font-bold items-center justify-center hover:bg-green-600 hover:text-white transition ease-in-out duration-500"
