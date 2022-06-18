@@ -13,6 +13,7 @@ const Profile = () => {
       <div className="bg-gray-200 flex justify-center items-center flex-grow">
         <div className="flex">
           <h1 className="text-3xl font-semibold">
+            Welcome{" "}
             {((token) => {
               if (typeof window != "undefined") {
                 console.log(`token is ${token}`);
