@@ -65,7 +65,7 @@ export const Navbar = () => {
                 Profile
               </a>
             </Link>
-            <Link href="/surveys">
+            <Link href="/surveys/main">
               <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded-md text-white font-bold items-center justify-center hover:bg-green-600 hover:text-white transition ease-in-out duration-500">
                 Surveys
               </a>
