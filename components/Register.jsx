@@ -26,7 +26,7 @@ const Register = () => {
     };
 
     const response = await fetch(
-      "http://127.0.0.1:80/api/users",
+      `${process.env.API_KEY}/api/users`,
       requestOptions
     );
     const data = await response.json();
@@ -41,7 +41,7 @@ const Register = () => {
       };
 
       const response = await fetch(
-        "http://127.0.0.1:80/api/token",
+        `${process.env.API_KEY}/api/token`,
         requestOptions
       );
       const data = await response.json();

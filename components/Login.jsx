@@ -18,7 +18,7 @@ const Login = () => {
     };
 
     const response = await fetch(
-      "http://127.0.0.1:80/api/token",
+      `${process.env.API_KEY}/api/token`,
       requestOptions
     );
     const data = await response.json();
