@@ -7,19 +7,24 @@ const MySurveyListItem = (props) => {
   if (toggled == true) {
     return (
       <div className="rounded-md bg-slate-300 px-2">
-        <div className="flex flex-row justify-between">
-          <div className="overflow-clip my-1 p-1">
-            <span>{props.survey_name}</span>
+        <div className="flex flex-col pb-2">
+          <div className="flex flex-row justify-between">
+            <div className="overflow-clip my-1 p-1">
+              <span>{props.survey_name}</span>
+            </div>
+            <div>
+              <button
+                onClick={() => {
+                  setToggled(!toggled);
+                }}
+                className="ml-4 btn-primary rounded-md my-1 p-1"
+              >
+                Toggle
+              </button>
+            </div>
           </div>
-          <div>
-            <button
-              onClick={() => {
-                setToggled(!toggled);
-              }}
-              className="ml-4 btn-primary rounded-md my-1 p-1"
-            >
-              Toggle
-            </button>
+          <div className="bg-slate-200 rounded-md px-1">
+            <p>name: {props.survey_name}</p>
           </div>
         </div>
       </div>
