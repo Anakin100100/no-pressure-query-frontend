@@ -17,8 +17,10 @@ const Login = () => {
       body: `grant_type=&username=${email}&password=${password}&scope=&client_id=&client_secret=`,
     };
 
+    console.log(`${process.env.BACKEND}/api/users`);
+
     const response = await fetch(
-      `${process.env.API_KEY}/api/token`,
+      `${process.env.BACKEND}/api/token`,
       requestOptions
     );
     const data = await response.json();

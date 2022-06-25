@@ -26,7 +26,7 @@ const Register = () => {
     };
 
     const response = await fetch(
-      `${process.env.API_KEY}/api/users`,
+      `${process.env.BACKEND}/api/users`,
       requestOptions
     );
     const data = await response.json();
@@ -41,7 +41,7 @@ const Register = () => {
       };
 
       const response = await fetch(
-        `${process.env.API_KEY}/api/token`,
+        `${process.env.BACKEND}/api/token`,
         requestOptions
       );
       const data = await response.json();
@@ -70,7 +70,7 @@ const Register = () => {
       <div className="flex flex-col bg-gray-200 border-2 border-gray-600 rounded-xl">
         <form className="p-4" onSubmit={handleSubmit}>
           <h1 className="font-bold text-center">Register</h1>
-          <div className="w-">
+          <div className="">
             <label className="label">Email Address</label>
             <div className="control">
               <input
