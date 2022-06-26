@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "../styles/globals.scss";
 import { UserProvider } from "../contexts/user_context";
 import { usePostHog } from "next-use-posthog";
 
