@@ -13,10 +13,7 @@ const SurveysButtonsArray = () => {
         name="Unfilled"
         link="/surveys/my_unfilled_surveys"
       ></SurveyButton>
-      <SurveyButton
-        name="Created by me"
-        link="/surveys/my_surveys"
-      ></SurveyButton>
+      <SurveyButton name="Created by me" link="/surveys/main"></SurveyButton>
     </div>
   );
 };
