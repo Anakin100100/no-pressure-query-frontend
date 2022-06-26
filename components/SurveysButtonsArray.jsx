@@ -3,7 +3,7 @@ import SurveyButton from "./SurveyButton";
 
 const SurveysButtonsArray = () => {
   return (
-    <div className="flex justify-around space-x-2">
+    <div className="flex space-x-2 text-center">
       <SurveyButton name="New" link="/surveys/new_survey"></SurveyButton>
       <SurveyButton
         name="Filled by me"

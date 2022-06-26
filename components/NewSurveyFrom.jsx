@@ -41,7 +41,7 @@ const NewSurveyFrom = () => {
     if (!response.ok) {
       setError(data.detail);
     } else {
-      router.push("/surveys/my_surveys");
+      router.push("/surveys/main");
     }
   };
 
