@@ -1,9 +1,10 @@
-import React from "react";
+import { React } from "react";
 import dynamic from "next/dynamic";
 const Navbar = dynamic(() => import("../../components/Navbar"), { ssr: false });
 import NewSurveyFrom from "../../components/NewSurveyFrom";
 import SurveysButtonsArray from "../../components/SurveysButtonsArray";
 import QuestionsForm from "../../components/QuestionsForm";
+import { SurveyProvider } from "../../contexts/survey_context";
 
 const new_survey = () => {
   return (
@@ -13,8 +14,10 @@ const new_survey = () => {
         <SurveysButtonsArray />
         <div className="flex p-4 flex-grow justify-center items-center">
           <div className="flex flex-col bg-gray-200 border-2 border-gray-600 rounded-xl justify-center">
-            <NewSurveyFrom></NewSurveyFrom>
-            <QuestionsForm></QuestionsForm>
+            <SurveyProvider>
+              <NewSurveyFrom></NewSurveyFrom>
+              <QuestionsForm></QuestionsForm>
+            </SurveyProvider>
           </div>
         </div>
       </div>
