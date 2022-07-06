@@ -46,27 +46,25 @@ const NewSurveyFrom = () => {
   };
 
   return (
-    <div className="flex flex-col bg-gray-200 border-2 border-gray-600 rounded-xl justify-center">
-      <form className="p-4" onSubmit={handleSubmit}>
-        <h1 className="font-bold">Create Survey</h1>
-        <div className="field">
-          <label className="label">Survey name</label>
-          <div className="control">
-            <input
-              placeholder="Enter the survey name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="input"
-              required
-            />
-          </div>
+    <form className="p-4" onSubmit={handleSubmit}>
+      <h1 className="font-bold">Create Survey</h1>
+      <div className="field">
+        <label className="label">Survey name</label>
+        <div className="control">
+          <input
+            placeholder="Enter the survey name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="input"
+            required
+          />
         </div>
-        <ErrorMessage message={error} />
-        <button className="button is-primary" type="submit">
-          Create Survey
-        </button>
-      </form>
-    </div>
+      </div>
+      <ErrorMessage message={error} />
+      <button className="button is-primary" type="submit">
+        Create Survey
+      </button>
+    </form>
   );
 };
 

@@ -6,8 +6,8 @@ const MySurveysTable = (props) => {
 
   return (
     <div className="flex-col space-y-1">
-      {props.data.map((survey) => (
-        <MySurveyListItem survey_name={survey.name} />
+      {props.data.map((survey, index) => (
+        <MySurveyListItem survey_name={survey.name} key={index} />
       ))}
     </div>
   );
